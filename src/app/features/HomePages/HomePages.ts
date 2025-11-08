@@ -1,38 +1,36 @@
-import {Component} from '@angular/core';
+
 import {CommonModule} from '@angular/common';
+import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
 
 @Component({
   selector: 'app-home-pages',
   standalone: true,
   imports: [CommonModule],
   templateUrl: './HomePages.html',
+   changeDetection: ChangeDetectionStrategy.OnPush,
   styleUrls: ['./HomePages.css']
 })
 
-export class HomePages
-{
-  title = 'Primer Componente';
-  subtitle = 'Mi primera Practica';
+export class HomePage {
 
-  contador = 0;
-  private intervalo: any;
 
-  incrementar(): void
-  {
-    this.contador++;
-  }
- iniciarIncrementoAutomatico(): void {
-    this.intervalo = setInterval(() => {
-      this.incrementar();
-    }, 1000); // cada 1 segundo
-  }
-  decrementar(): void
-  {
-    this.contador--;
-  }
+constructor() {
+  setInterval(() => {
+    console.log("x");
+    this.conterSignal.update((v) => v + 1);
+  }, 1000
+);
+}
 
-  reset(): void
-  {
-    this.contador = 0;
+  counter = 0;
+  conterSignal = signal(0);
+  
+  changeValue(value: number) {
+    this.counter += value;
+    this.conterSignal.update((current) => current + value);
+  }
+   resetValue(value: number) {
+    this.counter = value;
+    this.conterSignal.set(value);
   }
 }

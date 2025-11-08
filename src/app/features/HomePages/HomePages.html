@@ -2,12 +2,11 @@
   <p class="badge"> Primer Componente </p>
   <h1 class="tittle"> Mi primera pagina </h1>
 
-  <h2 class="counter"> Contador: {{ contador}} </h2>
-  <h2 class="counter"> Contador: {{ contador}} </h2>
-
+  <h1>Contador: {{ counter }}</h1>
+  <h1>Contador Signal: {{ conterSignal() }}</h1>
   <div class="actions">
-    <button class="btn" (click)="incrementar()"> +1 </button>
-    <button class="btn" (click)="decrementar()"> -1 </button>
-    <button class="btn" (click)="reset()"> 0 </button>
+    <button (click)="changeValue(1)">Incrementar</button>
+    <button (click)="changeValue(-1)">Restar</button>
+    <button (click)="resetValue(0)">Resetear</button>
   </div>
 </section>
