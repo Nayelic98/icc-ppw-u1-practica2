@@ -1,0 +1,23 @@
+<h1>{{ name() }} {{ lastname() }}</h1>
+
+<dl>
+  <dt>Edad:</dt>
+  <dd>{{ age() }}</dd>
+
+  <dt>Nombre Completo:</dt>
+  <dd>{{ getfullName() }}</dd>
+
+  <dt>Nombre y Apellido (Mayusculas):</dt>
+  <dd>{{ (name() + ' ' + lastname()) | uppercase }}</dd>
+</dl>
+
+<button (click)="changeData()">
+  Cambiar datos
+</button>
+<button (click)="changeAge()">
+  Cambiar edad
+</button>
+<button (click)="resetData()">
+  Reset
+</button>
+
