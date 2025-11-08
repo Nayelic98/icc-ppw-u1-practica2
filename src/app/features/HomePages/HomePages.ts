@@ -4,14 +4,14 @@ import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
 
 @Component({
   selector: 'app-home-pages',
-  standalone: true,
-  imports: [CommonModule],
+  
+  imports: [],
   templateUrl: './HomePages.html',
    changeDetection: ChangeDetectionStrategy.OnPush,
   styleUrls: ['./HomePages.css']
 })
 
-export class HomePage {
+export class HomePages {
 
 
 constructor() {
