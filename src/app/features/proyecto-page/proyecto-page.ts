@@ -1,8 +1,9 @@
 import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
+import { ListadoProyectos } from './components/listado-proyectos/listado-proyectos';
 
 @Component({
   selector: 'app-proyecto-page',
-  imports: [],
+  imports: [ListadoProyectos],
   templateUrl: './proyecto-page.html',
   styleUrl: './proyecto-page.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -11,9 +12,12 @@ export class ProyectoPage {
 
   name = signal('');
   description= signal('');
+
   proyectos= signal<Proyecto[]>([
-    {id: 1, nombre: 'Proyecto 1', descripcion: 'Descripción del Proyecto 1'},
+    {id: 1, nombre: 'Proyecto 1', 
+    descripcion: 'Descripción del Proyecto 1'},
   ]);
+
 changeName(value: string){
   this.name.set(value);
 }
@@ -29,6 +33,9 @@ addProyecto(){
   this.proyectos.set([...this.proyectos(), newProyecto]);
   this.name.set('');
   this.description.set('');
+}
+dellFirstproyecto(){
+  this.proyectos.set(this.proyectos().slice(1));  
 }
 
 }

@@ -12,9 +12,9 @@ import { CommonModule } from "@angular/common";
 export class PerfilPages{
  name = signal('Nayeli');
  lastname = signal('Barbecho');
- age =signal<number>(21);
+ public age = signal(21);
 
- private readonly initial = { name: 'Nayeli', lastname: 'Barbecho', age: 21 };
+ 
 
  getfullName(): string{
   return `${this.name()} ${this.lastname()} con edad de ${this.age() } años`;
@@ -25,9 +25,9 @@ export class PerfilPages{
   this.age.set(25);
  }
   resetData(): void{
-    this.name.set(this.initial.name);
-    this.lastname.set(this.initial.lastname);
-    this.age.set(this.initial.age);
+    this.name.set('Nayeli');
+    this.lastname.set('Barbecho');
+    this.age.set(21);
   }
   changeAge(): void{
     this.age.set(18);

@@ -1,5 +1,4 @@
-<h1>Proyectos Page Works!</h1>
-<section>
+
   <div>
     <h3>Lista de Proyectos</h3>
     <h4>Proyecto Agregar {{name()}}</h4>
@@ -21,21 +20,7 @@
     >
 
     <button (click)="addProyecto()">Agregar Proyecto</button>
-    
-  </div>
-
-  <div>
-    <h3>Listado</h3>
-    <ul>
-      @for(proyecto of proyectos(); track $index) {
-        <li>{{proyecto.nombre}} - {{proyecto.descripcion}}</li>
-      }
-    </ul>
+    <button (click)="dellFirstproyecto(1)">Eliminar Primer Proyecto</button>
   </div>
 
 
-  <listado-proyectos 
-    listName="'Listado de Proyectos'" 
-    [proyectos]="proyectos()">
-  </listado-proyectos>
-</section>
