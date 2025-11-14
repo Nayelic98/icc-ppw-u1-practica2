@@ -12,9 +12,7 @@ export class AddProyecto {
   description= signal('');
   newProyecto= output<Proyecto>();
   removeProyecto= output<number>();
-  eliminar(id:number){
-    this.removeProyecto.emit(id);
-  }
+ 
   addProyecto(){
     const newProyecto: Proyecto = {
       id:Math.floor (Math.random()*100),
