@@ -1,16 +1,39 @@
 <nav>
-    <!--a href="/">Home</!--a>
-    <a-- href="/perfil">About</a-->
-    <a routerLink="" routerLinkActive="active"
-    [routerLinkActiveOptions]="{ exact: true }"
-    >Home </a> 
-    <a routerLink="/perfil"
-    routerLinkActive="active">Perfil</a>
-    <a routerLink="/proyecto"
-    routerLinkActive="active">Proyecto</a>
-    <a routerLink="/proyectodos"
-    routerLinkActive="active">Proyecto dos</a>
-    <a routerLink="/formulario"
-    routerLinkActive="active">Formularios</a>
+  <a routerLink=""
+     routerLinkActive="active"
+     [routerLinkActiveOptions]="{ exact: true }">
+     Home
+  </a>
+
+  <a routerLink="/perfil"
+     routerLinkActive="active">
+     Perfil
+  </a>
+
+  <a routerLink="/proyecto"
+     routerLinkActive="active">
+     Proyecto
+  </a>
+
+  <a routerLink="/proyectodos"
+     routerLinkActive="active">
+     Proyecto Dos
+  </a>
+
+  <!-- FORMULARIOS (lazy load) -->
+  <a routerLink="/formulario/basic"
+     routerLinkActive="active">
+     Formulario básico
+  </a>
+
+  <a routerLink="/formulario/dynamic"
+     routerLinkActive="active">
+     Formulario dinámico
+  </a>
+
+  <a routerLink="/formulario/more"
+     routerLinkActive="active">
+     Formulario más
+  </a>
 
 </nav>
